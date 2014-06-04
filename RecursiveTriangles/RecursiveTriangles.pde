@@ -42,9 +42,6 @@ class Triangle {
   void display() {
     fill(c);
     triangle(left.x, left.y, top.x, top.y, right.x, right.y);
-//    line(left.x, left.y, top.x, top.y);
-//    line(top.x, top.y, right.x, right.y);
-//    line(right.x, right.y, left.x, left.y);
   }
   
   /**
