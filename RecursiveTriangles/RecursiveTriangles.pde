@@ -36,11 +36,23 @@ class Triangle {
     top    = new Point(center.x, center.y - rad);
   }
   
+  /**
+   * Draws the triangle
+   */
   void display() {
     fill(c);
-    line(left.x, left.y, top.x, top.y);
-    line(top.x, top.y, right.x, right.y);
-    line(right.x, right.y, left.x, left.y);
+    triangle(left.x, left.y, top.x, top.y, right.x, right.y);
+//    line(left.x, left.y, top.x, top.y);
+//    line(top.x, top.y, right.x, right.y);
+//    line(right.x, right.y, left.x, left.y);
+  }
+  
+  /**
+   * Draws a rectangular outline around the triangle
+   */
+  void outline() {
+    fill(255);
+//    rect();
   }
   
 }
