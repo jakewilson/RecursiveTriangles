@@ -45,6 +45,7 @@ class Triangle {
    * Draws the triangle
    */
   void display() {
+    outline();
     fill(c);
     triangle(left.x, left.y, top.x, top.y, right.x, right.y);
   }
@@ -54,7 +55,7 @@ class Triangle {
    */
   void outline() {
     fill(255);
-//    rect();
+    rect(center.x - rad, center.y - rad, rad * 2, rad * 2);
   }
   
 }
