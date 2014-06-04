@@ -28,12 +28,17 @@ class Triangle {
   float rad;
   color c;
   
-  public Triangle(Point c, float r) {
-    center = c;
+  public Triangle(Point cen, float r, color c) {
+    center = cen;
     rad    = r;
     left   = new Point(center.x - rad, center.y + rad);
     right  = new Point(center.x + rad, center.y + rad);
     top    = new Point(center.x, center.y - rad);
+    this.c = c;
+  }
+  
+  public Triangle(Point c, float r) {
+    this(c, r, color(0, 0, 0));
   }
   
   /**
