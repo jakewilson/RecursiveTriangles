@@ -6,7 +6,7 @@ void setup() {
   size(600, 600);
   float rad = 128;
   background(255);
-  drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
+  drawFractal(new Triangle(new Point(width / 2, height - rad), rad, randomColor()));
 }
 
 void drawFractal(Triangle t) {
@@ -15,10 +15,17 @@ void drawFractal(Triangle t) {
     return;
   }
   Point center = new Point(t.center.x - (t.rad / 2), t.center.y - (t.rad * 1.5));
-  drawFractal(new Triangle(center, t.rad / 2));
+  drawFractal(new Triangle(center, t.rad / 2, randomColor()));
   center = new Point(t.center.x + (t.rad / 2), center.y);
-  drawFractal(new Triangle(center, t.rad / 2));
+  drawFractal(new Triangle(center, t.rad / 2, randomColor()));
   t.display();
+}
+
+/**
+ * Returns a random color
+ */
+color randomColor() {
+  return color(random(255), random(255), random(255)); 
 }
 
 class Triangle {
