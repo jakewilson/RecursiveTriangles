@@ -1,12 +1,16 @@
 Triangle[] t;
 
 final float INF = 0.25;
+final float rad = 128;
 
 void setup() {
-  size(600, 600);
-  float rad = 128;
+  size(300, 550);
   background(255);
   drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
+}
+
+void loop() {
+  //drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
 }
 
 void drawFractal(Triangle t) {
