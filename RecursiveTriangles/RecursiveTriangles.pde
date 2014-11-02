@@ -6,11 +6,11 @@ final float rad = 128;
 void setup() {
   size(300, 550);
   background(255);
-  drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
+  //drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
 }
 
 void loop() {
-  //drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
+  drawFractal(new Triangle(new Point(width / 2, height - rad), rad));
 }
 
 void drawFractal(Triangle t) {
@@ -23,6 +23,15 @@ void drawFractal(Triangle t) {
   center = new Point(t.center.x + (t.rad / 2), center.y);
   drawFractal(new Triangle(center, t.rad / 2));
   t.display();
+  millis(1000);
+}
+
+/**
+  * Has the program sleep for n number of milliseconds
+  */
+void milliSleep(int n) {
+  int start = millis();
+  while (millis() - start < n); // sleep
 }
 
 /**
