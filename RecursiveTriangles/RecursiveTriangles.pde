@@ -1,5 +1,3 @@
-Triangle[] t;
-
 final float INF = 0.25;
 final float rad = 128;
 
@@ -10,11 +8,14 @@ float iteration;
 final float START_X = 0;
 final float START_Y = 0;
 
+boolean paused;
+
 void setup() {
   size(512, 512);
   background(255);
   frameRate(1);
   iteration = 1;
+  paused = false;
 }
 
 void draw() {
@@ -33,6 +34,16 @@ void draw() {
   if (iteration++ == 9) {
     reset();
   }
+}
+
+void keyPressed() {
+  if (paused) {
+    paused = false;
+    loop();
+  } else {
+    paused = true;
+    noLoop();
+  } 
 }
 
 void randomFillAndStroke() {
